@@ -1,13 +1,22 @@
 <html><body><script>
 
-<html><body><script>
-function $_GET(param) {	var vars = {};	window.location.href.replace( location.hash, '' ).replace( 		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp		function( m, key, value ) { // callback			vars[key] = value !== undefined ? value : '';		}	);
-	if ( param ) {		return vars[param] ? vars[param] : null;		}	return vars;}
-var name = $_GET('name'), age = $_GET('age');
-document.write(name);
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
 
-</script></body></html>
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
 
+
+document.write($_GET());
 /*
 var id = $_GET('id');
 var subject = $_GET('subject');
@@ -20,7 +29,6 @@ var note=$_GET('note');
 document.write(title);
 
 //window.location.replace("https://protobuddhism.000webhostapp.com/content_description.php?id=${id}&subject=${subject}&topic=${topic}&subtopic=${subtopic}&title=${title}&type=${type}&note=${note}");
-
+*/
 </script></body></html>
 
-*/
